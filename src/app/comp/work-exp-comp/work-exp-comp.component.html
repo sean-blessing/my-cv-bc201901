@@ -7,7 +7,21 @@
     <h3 *ngIf='display==true'>Rasta mon!!!</h3>
   </li>
 </ul>
-<!--  Define a table, a table header
-      and then a table row with the
-      ngFor loop.  Display a row 
-      for every product in products. -->
+<p [hidden]='hdn'>hidden text</p>
+<input type="text" #firstname>
+<label>?:  {{ firstname.value }}</label>
+<table>
+  <!--  Define a table, a table header
+        and then a table row with the
+        ngFor loop.  Display a row 
+        for every product in products. -->
+  <tr><th>ID</th><th>Code</th><th>Desc</th><th>Price</th></tr>
+  <tr *ngFor='let pdt of products'>
+    <td>{{pdt.id}}</td>
+    <td>{{pdt.code}}</td>
+    <td>{{pdt.description}}</td>
+    <td>{{pdt.price}}</td>
+  </tr>
+</table>
+<p [hidden]='hide'>Can you see me???</p>
+<button (click)='logIt()'>Log It</button>

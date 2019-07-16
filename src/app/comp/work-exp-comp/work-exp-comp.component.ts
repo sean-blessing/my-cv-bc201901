@@ -8,14 +8,24 @@ import { Product } from '../../model/product.class';
 })
 export class WorkExpCompComponent implements OnInit {
   gig: string = "Reggae Musician";
-  display: boolean = true;
+  hide: boolean = false;
+  hdn: boolean = false;
   products: Product[] = [];
 
   constructor() { }
 
   ngOnInit() {
-    // create 5 products
-    // put them into products array
+    // fill products array w/ 5 products
+    this.products = [new Product(1,"sql","SQL Book",42.99),
+                     new Product(2,"java","Java Book",47.99),
+                     new Product(3,"spring","Spring Book",34.99),
+                     new Product(2,"html","HTML Book",14.99),
+                     new Product(2,"ang","Angular Book",45.99)
+                    ];
+  }
+
+  logIt() {
+    console.log("log button pressed.");
   }
 
 }
